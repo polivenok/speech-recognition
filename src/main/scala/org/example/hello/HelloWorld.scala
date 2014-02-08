@@ -1,3 +1,5 @@
+package org.example.hello
+
 import edu.cmu.sphinx.frontend.util.Microphone
 import edu.cmu.sphinx.recognizer.Recognizer
 import edu.cmu.sphinx.result.Result
@@ -6,7 +8,8 @@ import edu.cmu.sphinx.util.props.ConfigurationManager
 object HelloWorld {
 
   def main(args: Array[String]) {
-    val cm:ConfigurationManager =  new ConfigurationManager(this.getClass.getResource("test.config.xml"))
+
+    val cm:ConfigurationManager =  new ConfigurationManager(this.getClass.getResource("/test.config.xml"))
 
     val recognizer =  cm.lookup("recognizer").asInstanceOf[Recognizer]
     recognizer.allocate();
